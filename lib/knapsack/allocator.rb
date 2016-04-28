@@ -1,6 +1,8 @@
 module Knapsack
   class Allocator
     def initialize(args={})
+      puts "-"*100
+      puts args
       @report_distributor = Knapsack::Distributors::ReportDistributor.new(args)
       @leftover_distributor = Knapsack::Distributors::LeftoverDistributor.new(args)
     end

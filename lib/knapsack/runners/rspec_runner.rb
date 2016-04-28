@@ -11,8 +11,9 @@ module Knapsack
         puts 'Leftover specs:'
         puts allocator.leftover_node_tests
         puts
+        puts allocator.stringify_node_tests
 
-        cmd = %Q[bundle exec rspec #{args} --default-path #{allocator.test_dir} -- #{allocator.stringify_node_tests}]
+        cmd = %Q[bundle exec rspec -r turnip/rspec -r turnip/capybara #{args}  #{allocator.stringify_node_tests}]
 
         system(cmd)
         exit($?.exitstatus)
